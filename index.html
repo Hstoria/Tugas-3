@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Kontak</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #222831;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+            box-sizing: border-box;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        input[type="text"], input[type="email"], input[type="tel"], select {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transition: border 0.3s ease, background-color 0.3s ease;
+            box-sizing: border-box;
+            backdrop-filter: blur(10px); /* Efek kaca transparan */
+        }
+
+        select {
+            color: black; /* Mengubah warna font menjadi hitam */
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, select:focus {
+            border: 2px solid #BE3144;
+            background-color: rgba(255, 255, 255, 0.3);
+            outline: none;
+        }
+
+        label {
+            margin-top: 10px;
+            display: block;
+            font-weight: bold;
+            color: white;
+        }
+
+        input[type="submit"] {
+            background-color: #BE3144;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #FF4C5B;
+            transform: translateY(-2px);
+        }
+
+        input[type="submit"]:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <form action="proses_form.php" method="post">
+        <label for="name">Nama:</label>
+        <input type="text" name="name" id="name" required>
+
+        <label for="nim">NIM:</label>
+        <input type="text" name="nim" id="nim" required>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="sex">Jenis Kelamin:</label>
+        <select name="sex" id="sex" required>
+            <option value="male">Laki-laki</option>
+            <option value="female">Perempuan</option>
+            <option value="other">Lainnya</option>
+        </select>
+
+        <label for="hobby">Hobi:</label>
+        <input type="text" name="hobby" id="hobby">
+
+        <label for="phone">Nomor HP:</label>
+        <input type="tel" name="phone" id="phone" required>
+
+        <input type="submit" value="Kirim">
+    </form>
+
+</body>
+</html>
